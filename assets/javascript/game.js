@@ -37,9 +37,26 @@ function initialize() {
 	dashesArray = answerDashes.split('');	
 	console.log(answerDashes);	//breaks down letters into dashes
 	// Make it show in HTML 
-	document.getElementById("currentAnswer").textContent = answerDashes;
-	document.getElementById("lettersGuessed").textContent = "--";
-	document.getElementById("guessesLeft").textContent = guessesLeft;
+
+	// console.log(document.getElementsByClassName("currentAnswer")[0] = "Words");
+	// var x = document.getElementsByClassName("currentAnswer")
+	// x[0].innerHTML = "NEW wrds";
+	window.onload = function (){
+		document.getElementById('currentAnswer').innerHTML = answerDashes;
+		};
+	window.onload = function what(){
+			document.getElementById('lettersGuessed').innerHTML = "--";
+			};
+	window.onload = function what(){
+			document.getElementById('guessesLeft').innerHTML = guessesLeft;
+				};
+	// document.getElementById("currentAnswer").innerHTML = answerDashes;
+	// document.getElementById("lettersGuessed").innerHTML = "--";
+	// document.getElementById("guessesLeft").innerHTML = guessesLeft;
+
+	// .innerHTML = "kkkkkkkkkkkkkkkkk";
+	// document.getElementsByClassName("lettersGuessed").innerHTML = "--";
+	// document.getElementsByClassName("guessesLeft").innerHTML = guessesLeft;
 }
 initialize()
 
@@ -75,7 +92,7 @@ function gameStart(letterTyped) {
 		
 	
 	} 
-}
+
 // this displays a letter if it's in the answer
 function displayLetter(letter) {
 	// for each char in wordAsDashes, if matches currentWord --> display
@@ -102,16 +119,19 @@ function checkForWin() {
 
 document.onkeyup = function (event) {
 
-	// if (event.key===lettersGuessed) {
-	// 	document.getElementById("startKey").innerHTML = "";
-	// 	document.getElementById("currentAnswer").innerHTML = answerDashes.split(",");
-	// 	console.log(currentAnswer);
-	// 	gameStart = true;
-	// }
-	// else {
+	if (event.key===lettersGuessed) {
+		document.getElementById("startKey").innerHTML = "";
+		document.getElementById("currentAnswer").innerHTML = answerDashes.split(",");
+		console.log(currentAnswer);
+		gameStart = true;
+		}
+	else {
 		gameStart(event.key);
-	// }
+	} 
 }
+}
+
+
 
 
 // Automatically choose another word after game is over
