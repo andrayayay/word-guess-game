@@ -1,5 +1,4 @@
 // array 
-
 var states = ["texas", "wisconsin", "washington", "hawaii", "alaska", "california","minnesota","louisana", "georgia"];
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var letter;
@@ -82,12 +81,12 @@ function gameStart(letterTyped) {
 			correctGuesses++;
 			displayLetter(letterTyped);
 			guessesLeft--;
-			document.getElementById("#guessesLeft").innerHTML = guessesLeft;
+			document.getElementById("guessesLeft").innerHTML = guessesLeft;
 		}
 		else {
 			lettersGuessed.push(letterTyped)
 			guessesLeft--;
-			document.getElementById("#lettersGuessed").innerHTML = lettersGuessed.join(' ');
+			document.getElementById("lettersGuessed").innerHTML = lettersGuessed.join(' ');
 		}
 		
 	
@@ -95,14 +94,14 @@ function gameStart(letterTyped) {
 
 // this displays a letter if it's in the answer
 function displayLetter(letter) {
-	// for each char in wordAsDashes, if matches currentWord --> display
+	// for each character in wordAsDashes, if matches currentWord --> display
 	for (i = 0; i < currentAnswer.length; i++) {
 		if (letter == wordsArray[i]) {
 			dashesArray[i * 2] = letter;
 			console.log(dashesArray);
 		}
 	}
-	document.getElementById("#currentAnswer").innerHTML = dashesArray.join("");
+	document.getElementById("currentAnswer").innerHTML = dashesArray.join("");
 	checkForWin();
 }
 
@@ -112,7 +111,7 @@ function checkForWin() {
 	if (dashesArray.indexOf("_") === -1) {
 		alert("Great job! The answer is " + currentAnswer);
 		numWins++;
-		document.getElementById("#numWins").innerHTML = numWins;
+		document.getElementById("numWins").innerHTML = numWins;
 		initialize();
 	}
 }
@@ -120,8 +119,8 @@ function checkForWin() {
 document.onkeyup = function (event) {
 
 	if (event.key===lettersGuessed) {
-		document.getElementById("#startKey").innerHTML = "";
-		document.getElementById("#currentAnswer").innerHTML = answerDashes.split(",");
+		document.getElementById("startKey").innerHTML = "";
+		document.getElementById("currentAnswer").innerHTML = answerDashes.split(",");
 		console.log(currentAnswer);
 		gameStart = true;
 		}
