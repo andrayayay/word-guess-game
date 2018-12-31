@@ -41,20 +41,20 @@ function initialize() {
 	// console.log(document.getElementsByClassName("currentAnswer")[0] = "Words");
 	// var x = document.getElementsByClassName("currentAnswer")
 	// x[0].innerHTML = "NEW wrds";
-	window.onload = function (){
-		document.getElementById('currentAnswer').innerHTML = answerDashes;
-		};
-	window.onload = function what(){
-			document.getElementById('lettersGuessed').innerHTML = "--";
-			};
-	window.onload = function what(){
-			document.getElementById('guessesLeft').innerHTML = guessesLeft;
-				};
-	// document.getElementById("currentAnswer").innerHTML = answerDashes;
-	// document.getElementById("lettersGuessed").innerHTML = "--";
-	// document.getElementById("guessesLeft").innerHTML = guessesLeft;
+	// window.onload = function (){
+		// document.getElementById('#currentAnswer').innerHTML = answerDashes;
+		// };
+	// window.onload = function what(){
+			// document.getElementById('#lettersGuessed').innerHTML = "--";
+			// };
+	// window.onload = function what(){
+			// document.getElementById('#guessesLeft').innerHTML = guessesLeft;
+				// };
+	document.getElementById("currentAnswer").innerHTML = answerDashes;
+	document.getElementById("lettersGuessed").innerHTML = "--";
+	document.getElementById("guessesLeft").innerHTML = guessesLeft;
 
-	// .innerHTML = "kkkkkkkkkkkkkkkkk";
+	// .innerHTML = "showmesomething";
 	// document.getElementsByClassName("lettersGuessed").innerHTML = "--";
 	// document.getElementsByClassName("guessesLeft").innerHTML = guessesLeft;
 }
@@ -82,12 +82,12 @@ function gameStart(letterTyped) {
 			correctGuesses++;
 			displayLetter(letterTyped);
 			guessesLeft--;
-			document.getElementById("guessesLeft").innerHTML = guessesLeft;
+			document.getElementById("#guessesLeft").innerHTML = guessesLeft;
 		}
 		else {
 			lettersGuessed.push(letterTyped)
 			guessesLeft--;
-			document.getElementById("lettersGuessed").innerHTML = lettersGuessed.join(' ');
+			document.getElementById("#lettersGuessed").innerHTML = lettersGuessed.join(' ');
 		}
 		
 	
@@ -102,7 +102,7 @@ function displayLetter(letter) {
 			console.log(dashesArray);
 		}
 	}
-	document.getElementById("currentAnswer").innerHTML = dashesArray.join("");
+	document.getElementById("#currentAnswer").innerHTML = dashesArray.join("");
 	checkForWin();
 }
 
@@ -112,7 +112,7 @@ function checkForWin() {
 	if (dashesArray.indexOf("_") === -1) {
 		alert("Great job! The answer is " + currentAnswer);
 		numWins++;
-		document.getElementById("numWins").innerHTML = numWins;
+		document.getElementById("#numWins").innerHTML = numWins;
 		initialize();
 	}
 }
@@ -120,8 +120,8 @@ function checkForWin() {
 document.onkeyup = function (event) {
 
 	if (event.key===lettersGuessed) {
-		document.getElementById("startKey").innerHTML = "";
-		document.getElementById("currentAnswer").innerHTML = answerDashes.split(",");
+		document.getElementById("#startKey").innerHTML = "";
+		document.getElementById("#currentAnswer").innerHTML = answerDashes.split(",");
 		console.log(currentAnswer);
 		gameStart = true;
 		}
@@ -135,8 +135,3 @@ document.onkeyup = function (event) {
 
 
 // Automatically choose another word after game is over
-
-
-
-
-
